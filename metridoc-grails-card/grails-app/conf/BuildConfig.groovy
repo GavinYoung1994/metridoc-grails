@@ -35,8 +35,13 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-        // runtime 'mysql:mysql-connector-java:5.1.24'
+        compile("org.apache.poi:poi:3.8-beta3")
+        compile("org.apache.poi:poi-ooxml:3.8-beta3") {
+            excludes 'poi'
+            excludes 'dom4j'
+        }
+        test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
+        runtime 'mysql:mysql-connector-java:5.1.24'
     }
 
     plugins {

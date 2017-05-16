@@ -1,4 +1,4 @@
-package metridoc.card
+package metridoc.grails.card
 
 import grails.converters.JSON
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException
@@ -15,13 +15,17 @@ class SpreadsheetController {
 	def importCardDataService
 	def exportCardDataService
 
-	def index() {
+	def index = {
 		println "hello"
-        // session.setAttribute("prev", new String("spreadsheetUpload"))
+        session.setAttribute("prev", new String("index"))
 
     }
 
-    def upload() {
+    def test() { 
+        println "For Testing purposes only"
+    }
+
+    def upload = {
     	println "hello2"
         withForm {
             MultipartFile uploadedFile = request.getFile("spreadsheetUpload")
